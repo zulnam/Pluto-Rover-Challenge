@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the main app 1`] = `
+<div
+  class="commandContainer"
+>
+  <h3>
+    Rover Command
+  </h3>
+  <form
+    data-testid="controlZone"
+  >
+    <button
+      data-testid="forward"
+    >
+       F 
+    </button>
+    <button
+      data-testid="backward"
+    >
+       B 
+    </button>
+    <button
+      data-testid="left"
+    >
+       L 
+    </button>
+    <button
+      data-testid="right"
+    >
+       R 
+    </button>
+  </form>
+  <h3>
+    Rover Position
+  </h3>
+  <div
+    class="roverPositionContainer"
+  >
+    <p>
+      Y
+    </p>
+    <p>
+      X
+    </p>
+    <p>
+      Orientation
+    </p>
+    <p
+      data-testid="Yposition"
+    >
+      0
+    </p>
+    <p
+      data-testid="Xposition"
+    >
+      0
+    </p>
+    <p
+      data-testid="currentOrientation"
+    >
+      N
+    </p>
+  </div>
+</div>
+`;
