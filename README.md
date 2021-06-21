@@ -1,12 +1,12 @@
 # New Horizon Rover Challenge
 
 ## Table of Contents
-[Introduction](#intro)
-[Disclaimer](#disclaimer)
-[Features](#features)
-[Grid Example](#gridExample)
-[Script Commands](#scriptCommands)
-[Debugging](#debugging)
+[Introduction](#intro)  
+[Disclaimer](#disclaimer)  
+[Features](#features)  
+[Grid Example](#gridExample)  
+[Script Commands](#scriptCommands)  
+[Debugging](#debugging)  
 
 ## <a id="intro">Introduction</a>
 
