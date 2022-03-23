@@ -10,8 +10,9 @@ const rootStyles = css`
 
   #root {
     display: grid;
-    grid-template-columns: 1fr;
-    margin: 20px;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows: 0.2fr 1fr;
+    padding: 20px;
 
     @media (min-width: 560px) {
       grid-template-columns: 1fr 2fr;

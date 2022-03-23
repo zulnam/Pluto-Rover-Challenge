@@ -51,8 +51,9 @@ const App = () => {
         obstacleCoordinates,
       }}
     >
+      <Title>Rover Command</Title>
       <CommandContainer>
-        <h3>Rover Command</h3>
+        <h3>Controls</h3>
         <InputContainer />
         <CoordinatesDisplay />
       </CommandContainer>
@@ -61,20 +62,29 @@ const App = () => {
   );
 };
 
+const Title = styled.h1`
+  grid-column: 1 / span 2;
+  font-size: 2.5em;
+  margin: 0;
+  padding-top: 16px;
+`;
+
 const CommandContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 0.8fr 0.2fr;
+  gap: 0px 20px;
+
   h3 {
     text-align: center;
+    grid-column: 1 / span 4;
   }
 
-  form {
-    display: flex;
-    justify-content: space-around;
-
-    button {
-      border-radius: 8px;
-      width: 64px;
-      height: 32px;
-    }
+  button {
+    border-radius: 8px;
+    height: 32px;
+    align-self: center;
+    justify-self: center;
   }
 `;
 
