@@ -74,20 +74,8 @@ const Input = () => {
     setCommand('');
   }, [command, fireCommand]);
 
-  /**
-   *
-   * @param {Event} e
-   *
-   * The form container could be replaced with a div, removing the need for e.preventDefault()
-   * however maintaining it a form and building around that will ensure any future
-   * iterations on commands will already support any form input methods
-   */
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   return (
-    <form data-testid="controlZone" onSubmit={handleSubmit}>
+    <>
       <button
         data-testid="forward"
         onClick={() => {
@@ -124,7 +112,7 @@ const Input = () => {
         {' '}
         R{' '}
       </button>
-    </form>
+    </>
   );
 };
 
