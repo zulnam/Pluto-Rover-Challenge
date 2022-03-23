@@ -48,7 +48,7 @@ const Input = () => {
   useEffect(() => {
     const handleKeyboard = (e) => {
       e.preventDefault();
-      const validCommands = ['F', 'B', 'L', 'R'];
+      const validCommands = ['W', 'S', 'A', 'D'];
       const key = e.key.toUpperCase();
 
       if (validCommands.find((element) => element === key)) {
@@ -66,7 +66,7 @@ const Input = () => {
   }, []);
 
   useEffect(() => {
-    if (command.length === 0) {
+    if (!command.length) {
       return false;
     }
 
@@ -79,38 +79,34 @@ const Input = () => {
       <button
         data-testid="forward"
         onClick={() => {
-          setCommand('F');
+          setCommand('W');
         }}
       >
-        {' '}
-        F{' '}
+        Forward
       </button>
       <button
         data-testid="backward"
         onClick={() => {
-          setCommand('B');
+          setCommand('S');
         }}
       >
-        {' '}
-        B{' '}
+        Backward
       </button>
       <button
         data-testid="left"
         onClick={() => {
-          setCommand('L');
+          setCommand('A');
         }}
       >
-        {' '}
-        L{' '}
+        Turn Left
       </button>
       <button
         data-testid="right"
         onClick={() => {
-          setCommand('R');
+          setCommand('D');
         }}
       >
-        {' '}
-        R{' '}
+        Turn Right
       </button>
     </>
   );
