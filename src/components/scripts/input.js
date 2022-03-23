@@ -131,13 +131,13 @@ export const collisionCheck = (
   return false;
 };
 
-export const decipherLog = (logCommand, type) => {
+export const decipherLog = (commandCode, type) => {
   let newItem = {};
 
   switch (type) {
     case 'info':
       newItem = {
-        command: `SENDING COMMAND ${logCommand}`,
+        command: `${commandsObject[commandCode]}`,
         id: Date.now(),
       };
       break;
@@ -154,4 +154,11 @@ export const decipherLog = (logCommand, type) => {
       };
   }
   return newItem;
+};
+
+const commandsObject = {
+  W: 'Rover moved forward.',
+  S: 'Rover moved back.',
+  A: 'Rover turned left.',
+  D: 'Rover turned right.',
 };
