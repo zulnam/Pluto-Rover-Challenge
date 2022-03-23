@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import styled from '@emotion/styled';
-import MovementContext from '../context/movementContext';
+import MovementContext from '../../context/movementContext';
 
-const CommandHistory = () => {
+const ActivityLog = () => {
   const { items } = useContext(MovementContext);
   const history = items.slice().reverse();
 
@@ -23,7 +23,7 @@ const CommandHistoryContainer = styled.div`
   ul {
     list-style-type: none;
 
-    & :first-child {
+    & li:first-of-type {
       background-color: aquamarine;
       opacity: 1;
     }
@@ -34,4 +34,4 @@ const CommandHistoryContainer = styled.div`
   }
 `;
 
-export default CommandHistory;
+export default ActivityLog;

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import movement from '../reducers/movement';
 import MovementContext from '../context/movementContext';
 
-import CommandHistory from './CommandHistory';
+import ActivityLog from './ActivityLog/ActivityLog';
 import Input from './Input';
 import RoverLocation from './RoverLocation';
 
@@ -56,7 +56,7 @@ const App = () => {
         <Input />
         <RoverLocation />
       </CommandContainer>
-      <CommandHistory />
+      <ActivityLog />
     </MovementContext.Provider>
   );
 };
