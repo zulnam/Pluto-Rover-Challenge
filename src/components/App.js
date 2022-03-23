@@ -5,7 +5,7 @@ import MovementContext from '../context/movementContext';
 
 import ActivityLog from './ActivityLog/ActivityLog';
 import InputContainer from './InputContainer/InputContainer';
-import RoverLocation from './RoverLocation';
+import CoordinatesDisplay from './CoordinatesDisplay/CoordinatesDisplay';
 
 const initialCoordinates = {
   X: 0,
@@ -54,7 +54,7 @@ const App = () => {
       <CommandContainer>
         <h3>Rover Command</h3>
         <InputContainer />
-        <RoverLocation />
+        <CoordinatesDisplay />
       </CommandContainer>
       <ActivityLog />
     </MovementContext.Provider>

@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import styled from '@emotion/styled';
-import MovementContext from '../context/movementContext';
+import MovementContext from '../../context/movementContext';
 
-const RoverLocation = () => {
+const CoordinatesDisplay = () => {
   const { coordinates } = useContext(MovementContext);
 
   return (
@@ -37,4 +37,4 @@ const RoverPositionContainer = styled.div`
   }
 `;
 
-export default RoverLocation;
+export default CoordinatesDisplay;
