@@ -20,8 +20,11 @@ const ActivityLog = () => {
 };
 
 const CommandHistoryContainer = styled.div`
+  text-align: center;
+
   ul {
     list-style-type: none;
+    padding: 0;
 
     & li:first-of-type {
       background-color: aquamarine;
@@ -31,6 +34,11 @@ const CommandHistoryContainer = styled.div`
     li {
       opacity: 0.5;
     }
+  }
+
+  @media (min-width: 560px) {
+    text-align: left;
+    padding: 32px;
   }
 `;
 
