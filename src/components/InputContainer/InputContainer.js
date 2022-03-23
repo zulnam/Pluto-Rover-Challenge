@@ -1,8 +1,8 @@
 import { useState, useContext, useEffect, useCallback } from 'react';
-import MovementContext from '../context/movementContext';
-import { collisionCheck, decipherLog } from './scripts/input';
+import MovementContext from '../../context/movementContext';
+import { collisionCheck, decipherLog } from '../scripts/input';
 
-const Input = () => {
+const InputContainer = () => {
   const { items, setItems, coordinates, setCoordinates, obstacleCoordinates } =
     useContext(MovementContext);
   const [command, setCommand] = useState('');
@@ -112,4 +112,4 @@ const Input = () => {
   );
 };
 
-export default Input;
+export default InputContainer;

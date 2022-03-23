@@ -4,7 +4,7 @@ import movement from '../reducers/movement';
 import MovementContext from '../context/movementContext';
 
 import ActivityLog from './ActivityLog/ActivityLog';
-import Input from './Input';
+import InputContainer from './InputContainer/InputContainer';
 import RoverLocation from './RoverLocation';
 
 const initialCoordinates = {
@@ -53,7 +53,7 @@ const App = () => {
     >
       <CommandContainer>
         <h3>Rover Command</h3>
-        <Input />
+        <InputContainer />
         <RoverLocation />
       </CommandContainer>
       <ActivityLog />
