@@ -8,6 +8,8 @@
     "react-scripts": "4.0.3"
   },
   "devDependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
     "@testing-library/dom": "^7.31.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -29,7 +31,10 @@
       "react-app/jest"
     ],
     "rules": {
-      "semi": ["error", "always"]
+      "semi": [
+        "error",
+        "always"
+      ]
     }
   },
   "browserslist": {
