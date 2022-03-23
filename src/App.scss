@@ -5,52 +5,5 @@
 
   @media (min-width: 560px) {
     grid-template-columns: 1fr 2fr;
-}
-}
-
-.commandContainer {
-  h3 {
-    text-align: center;
-  }
-
-  form {
-    display: flex;
-    justify-content: space-around;
-
-    button {
-      border-radius: 8px;
-      width: 64px;
-      height: 32px;
-    }
-  }
-}
-
-.roverPositionContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-
-  p {
-    text-align: center;
-    margin: 0;
-  }
-
-  :nth-child(4), :nth-child(5), :nth-child(6) {
-    border: 1px solid black;
-    padding: 12px;
-  }
-} 
-
-.commandHistoryContainer {
-  ul {
-    list-style-type: none;
-
-    :first-child {
-      background-color: aquamarine;
-      opacity: 1;
-    }
-    
-    li {
-      opacity: 0.5;
-    }
   }
 }
