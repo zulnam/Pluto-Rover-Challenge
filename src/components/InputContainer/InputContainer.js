@@ -16,7 +16,13 @@ const InputContainer = () => {
   const fireLogEntry = useCallback(
     (logCommand, type) => {
       const newItem = decipherLog(logCommand, type);
-      setItems([...items, newItem]);
+
+      if (items.length === 10) {
+        items.splice(0, 1);
+        setItems([...items, newItem]);
+      } else {
+        setItems([...items, newItem]);
+      }
     },
     [items, setItems]
   );
