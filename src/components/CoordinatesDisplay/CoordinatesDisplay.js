@@ -27,7 +27,7 @@ const CoordinatesDisplay = () => {
     setTimeout(() => {
       direction.current.style.animation = null;
     }, 500);
-  }, [coordinates.orientation]);
+  }, [coordinates.direction]);
 
   return (
     <RoverPositionContainer>
@@ -47,7 +47,7 @@ const CoordinatesDisplay = () => {
       <CoordinateContainer>
         <p>Direction</p>
         <p ref={direction} data-testid="currentOrientation">
-          {coordinates.orientation}
+          {coordinates.direction}
         </p>
       </CoordinateContainer>
     </RoverPositionContainer>

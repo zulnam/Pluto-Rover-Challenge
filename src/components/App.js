@@ -10,7 +10,7 @@ import CoordinatesDisplay from './CoordinatesDisplay/CoordinatesDisplay';
 const initialCoordinates = {
   X: 0,
   Y: 0,
-  orientation: 'N',
+  direction: 'N',
 };
 
 const App = () => {

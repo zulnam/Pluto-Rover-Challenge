@@ -14,10 +14,10 @@ export const collisionCheck = (
   commandKey,
   obstacleCoordinates
 ) => {
-  const orientation = currentCoordinates.orientation;
+  const direction = currentCoordinates.direction;
 
   /* North collision check */
-  if (orientation === 'N') {
+  if (direction === 'N') {
     if (commandKey === 'W') {
       if (
         obstacleCoordinates.find(
@@ -45,7 +45,7 @@ export const collisionCheck = (
   }
 
   /* East collision check */
-  if (orientation === 'E') {
+  if (direction === 'E') {
     if (commandKey === 'W') {
       if (
         obstacleCoordinates.find(
@@ -73,7 +73,7 @@ export const collisionCheck = (
   }
 
   /* South collision check */
-  if (orientation === 'S') {
+  if (direction === 'S') {
     if (commandKey === 'W') {
       if (
         obstacleCoordinates.find(
@@ -101,7 +101,7 @@ export const collisionCheck = (
   }
 
   /* West collision check */
-  if (orientation === 'W') {
+  if (direction === 'W') {
     if (commandKey === 'W') {
       if (
         obstacleCoordinates.find(

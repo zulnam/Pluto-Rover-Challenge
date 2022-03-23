@@ -1,5 +1,5 @@
 const movement = (state, command) => {
-  const directionCode = state.orientation + command.type;
+  const directionCode = state.direction + command.type;
 
   switch (command.type) {
     case 'W':
@@ -24,8 +24,8 @@ const movement = (state, command) => {
       break;
     case 'A':
     case 'D':
-      const newOrientation = turnDirection(state.orientation, command.type);
-      return { ...state, orientation: newOrientation };
+      const newOrientation = turnDirection(state.direction, command.type);
+      return { ...state, direction: newOrientation };
     case 'C':
       return { ...state };
     default:
@@ -61,10 +61,10 @@ const handleX = (x, operation) => {
   }
 };
 
-const turnDirection = (orientation, command) => {
+const turnDirection = (direction, command) => {
   const directions = ['N', 'E', 'S', 'W'];
   const currentDirection = directions.findIndex(
-    (element) => element === orientation
+    (element) => element === direction
   );
 
   switch (command) {
