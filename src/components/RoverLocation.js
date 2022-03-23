@@ -29,9 +29,9 @@ const RoverPositionContainer = styled.div`
     margin: 0;
   }
 
-  & :nth-child(4),
-  & :nth-child(5),
-  & :nth-child(6) {
+  & p:nth-of-type(4),
+  & p:nth-of-type(5),
+  & p:nth-of-type(6) {
     border: 1px solid black;
     padding: 12px;
   }
