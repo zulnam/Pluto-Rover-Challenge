@@ -1,39 +1,102 @@
-import { useContext } from 'react';
+import { useEffect, useContext, useRef } from 'react';
 import styled from '@emotion/styled';
 import MovementContext from '../../context/movementContext';
 
 const CoordinatesDisplay = () => {
   const { coordinates } = useContext(MovementContext);
 
+  const xCoordinate = useRef(null);
+  useEffect(() => {
+    xCoordinate.current.style.animation = 'enlrage 0.5s 1';
+    setTimeout(() => {
+      xCoordinate.current.style.animation = null;
+    }, 500);
+  }, [coordinates.X]);
+
+  const yCoordinate = useRef(null);
+  useEffect(() => {
+    yCoordinate.current.style.animation = 'enlrage 0.5s 1';
+    setTimeout(() => {
+      yCoordinate.current.style.animation = null;
+    }, 500);
+  }, [coordinates.Y]);
+
+  const direction = useRef(null);
+  useEffect(() => {
+    direction.current.style.animation = 'enlrage 0.5s 1';
+    setTimeout(() => {
+      direction.current.style.animation = null;
+    }, 500);
+  }, [coordinates.orientation]);
+
   return (
-    <>
-      <h3>Rover Position</h3>
-      <RoverPositionContainer>
+    <RoverPositionContainer>
+      <h3>Position</h3>
+      <CoordinateContainer>
         <p>Y</p>
+        <p ref={yCoordinate} data-testid="Yposition">
+          {coordinates.Y}
+        </p>
+      </CoordinateContainer>
+      <CoordinateContainer>
         <p>X</p>
-        <p>Orientation</p>
-        <p data-testid="Yposition">{coordinates.Y}</p>
-        <p data-testid="Xposition">{coordinates.X}</p>
-        <p data-testid="currentOrientation">{coordinates.orientation}</p>
-      </RoverPositionContainer>
-    </>
+        <p ref={xCoordinate} data-testid="Xposition">
+          {coordinates.X}
+        </p>
+      </CoordinateContainer>
+      <CoordinateContainer>
+        <p>Direction</p>
+        <p ref={direction} data-testid="currentOrientation">
+          {coordinates.orientation}
+        </p>
+      </CoordinateContainer>
+    </RoverPositionContainer>
   );
 };
 
 const RoverPositionContainer = styled.div`
+  grid-column: 1 / span 4;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, 0.5fr) 1fr;
+  grid-template-rows: 0.5fr 0.5fr;
+`;
 
-  p {
-    text-align: center;
+const CoordinateContainer = styled.span`
+  display: grid;
+  grid-template-columns: repeat(2, 0.5fr);
+  height: 24px;
+  align-items: end;
+
+  & p {
     margin: 0;
   }
 
-  & p:nth-of-type(4),
-  & p:nth-of-type(5),
-  & p:nth-of-type(6) {
-    border: 1px solid black;
-    padding: 12px;
+  & p:first-of-type {
+    justify-self: right;
+  }
+
+  & p:nth-of-type(2) {
+    padding-left: 12px;
+
+    @keyframes enlrage {
+      20% {
+        font-size: 16px;
+        color: black;
+        font-weight: normal;
+      }
+
+      50% {
+        font-size: 18px;
+        color: red;
+        font-weight: bold;
+      }
+
+      100% {
+        font-size: 16px;
+        color: black;
+        font-weight: normal;
+      }
+    }
   }
 `;
 
