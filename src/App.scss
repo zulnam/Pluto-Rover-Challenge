@@ -1,9 +1,0 @@
-#root {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 20px;
-
-  @media (min-width: 560px) {
-    grid-template-columns: 1fr 2fr;
-  }
-}
