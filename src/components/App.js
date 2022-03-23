@@ -26,14 +26,20 @@ const App = () => {
 
     for (let i = 1; i <= preliminaryScan; i++) {
       const newObstacle = {
-        Y: Math.floor(Math.random() * 100),
         X: Math.floor(Math.random() * 100),
+        Y: Math.floor(Math.random() * 100),
       };
-      // console.log(newObstacle); //kept for easy debugging
-      //TODO: investigate why collision breaks when using setObstacleCoordinates()
-      obstacleCoordinates.push(newObstacle);
+
+      setObstacleCoordinates((obstacleCoordinates) => [
+        ...obstacleCoordinates,
+        newObstacle,
+      ]);
     }
-  }, [obstacleCoordinates]);
+    /** excluded eslint rule for obstacleCoordinates dependency as
+     * this is the boot spawn generator for obstacles
+     */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <MovementContext.Provider
