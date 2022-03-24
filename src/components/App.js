@@ -53,7 +53,7 @@ const App = () => {
       }}
     >
       <Title>Rover Command</Title>
-      <CommandContainer>
+      <CommandContainer data-testId="controlZone">
         <h3>Controls</h3>
         <InputContainer />
         <CoordinatesDisplay />

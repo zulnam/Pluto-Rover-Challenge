@@ -3,34 +3,32 @@ import React from 'react';
 import App from '../App';
 
 describe('listens for any valid keyboard input', () => {
+  beforeEach(() => {
+    const div = document.createElement('div');
+    render(<App />, div);
+  });
 
-    beforeEach(() => {
-        const div = document.createElement('div');
-        render(<App />, div);
-    });
+  it('W key press fires forward movement', () => {
+    const input = screen.getByTestId('controlZone');
+    fireEvent.keyUp(input, { key: 'w', code: 87 });
+    expect(screen.getByTestId('Yposition').innerHTML).toContain(1);
+  });
 
-    it('F key press fires forward movement', () => {
-        const input = screen.getByTestId('controlZone');
-        fireEvent.keyUp(input, {key: 'f', code: 70});
-        expect(screen.getByTestId('Yposition').innerHTML).toContain(1);
-    });
+  it('S key press fires backward movement', () => {
+    const input = screen.getByTestId('controlZone');
+    fireEvent.keyUp(input, { key: 's', code: 83 });
+    expect(screen.getByTestId('Yposition').innerHTML).toContain(100);
+  });
 
-    it('B key press fires backward movement', () => {
-        const input = screen.getByTestId('controlZone');
-        fireEvent.keyUp(input, {key: 'b', code: 66});
-        expect(screen.getByTestId('Yposition').innerHTML).toContain(100);
-    });
+  it('A key press fires left turn', () => {
+    const input = screen.getByTestId('controlZone');
+    fireEvent.keyUp(input, { key: 'a', code: 65 });
+    expect(screen.getByTestId('currentOrientation').innerHTML).toContain('W');
+  });
 
-    it('L key press fires left turn', () => {
-        const input = screen.getByTestId('controlZone');
-        fireEvent.keyUp(input, {key: 'l', code: 76});
-        expect(screen.getByTestId('currentOrientation').innerHTML).toContain('W');
-    });
-
-    it('R key press fires right turn', () => {
-        const input = screen.getByTestId('controlZone');
-        fireEvent.keyUp(input, {key: 'r', code: 82});
-        expect(screen.getByTestId('currentOrientation').innerHTML).toContain('E');
-    });
-
+  it('D key press fires right turn', () => {
+    const input = screen.getByTestId('controlZone');
+    fireEvent.keyUp(input, { key: 'd', code: 68 });
+    expect(screen.getByTestId('currentOrientation').innerHTML).toContain('E');
+  });
 });
