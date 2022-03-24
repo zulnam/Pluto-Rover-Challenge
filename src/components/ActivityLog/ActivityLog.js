@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import styled from '@emotion/styled';
 import MovementContext from '../../context/movementContext';
+import theme from '../../styling/theme';
 
 const ActivityLog = () => {
   const { items } = useContext(MovementContext);
@@ -21,13 +22,14 @@ const ActivityLog = () => {
 
 const CommandHistoryContainer = styled.div`
   text-align: center;
+  height: 200px;
 
   ul {
     list-style-type: none;
     padding: 0;
 
     & li:first-of-type {
-      background-color: aquamarine;
+      background-color: ${theme.colors.lightTurqoise};
       opacity: 1;
     }
 
@@ -48,7 +50,7 @@ const CommandHistoryContainer = styled.div`
     }
   }
 
-  @media (min-width: 560px) {
+  @media (min-width: ${theme.breakpoints.md}) {
     text-align: left;
     padding: 32px;
   }

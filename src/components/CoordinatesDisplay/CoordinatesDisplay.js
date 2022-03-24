@@ -1,6 +1,7 @@
 import { useEffect, useContext, useRef } from 'react';
 import styled from '@emotion/styled';
 import MovementContext from '../../context/movementContext';
+import theme from '../../styling/theme';
 
 const CoordinatesDisplay = () => {
   const { coordinates } = useContext(MovementContext);
@@ -64,7 +65,7 @@ const RoverPositionContainer = styled.div`
 const CoordinateContainer = styled.span`
   display: grid;
   grid-template-columns: repeat(2, 0.5fr);
-  height: 24px;
+  height: ${theme.baseSizes.lg};
   align-items: end;
 
   & p {
@@ -76,24 +77,24 @@ const CoordinateContainer = styled.span`
   }
 
   & p:nth-of-type(2) {
-    padding-left: 12px;
+    padding-left: ${theme.baseSizes.sm};
 
     @keyframes enlrage {
       20% {
-        font-size: 16px;
-        color: black;
+        font-size: ${theme.baseSizes.md};
+        color: ${theme.colors.charcoal};
         font-weight: normal;
       }
 
       50% {
-        font-size: 18px;
-        color: red;
+        font-size: ${theme.baseSizes.st};
+        color: ${theme.colors.chillRed};
         font-weight: bold;
       }
 
       100% {
-        font-size: 16px;
-        color: black;
+        font-size: ${theme.baseSizes.md};
+        color: ${theme.colors.charcoal};
         font-weight: normal;
       }
     }

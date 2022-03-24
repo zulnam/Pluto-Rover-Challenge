@@ -1,5 +1,6 @@
 import React, { useState, useReducer, useEffect } from 'react';
 import styled from '@emotion/styled';
+import theme from '../styling/theme';
 import movement from '../reducers/movement';
 import MovementContext from '../context/movementContext';
 
@@ -66,7 +67,7 @@ const Title = styled.h1`
   grid-column: 1 / span 2;
   font-size: 2.5em;
   margin: 0;
-  padding-top: 16px;
+  padding-top: ${theme.baseSizes.md};
 `;
 
 const CommandContainer = styled.div`
