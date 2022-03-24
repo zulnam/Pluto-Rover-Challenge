@@ -32,7 +32,19 @@ const CommandHistoryContainer = styled.div`
     }
 
     li {
-      opacity: 0.5;
+      opacity: 0.6;
+    }
+
+    & li:nth-of-type(8) {
+      opacity: 0.4;
+    }
+
+    & li:nth-of-type(9) {
+      opacity: 0.3;
+    }
+
+    & li:nth-of-type(10) {
+      opacity: 0.2;
     }
   }
 
