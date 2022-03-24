@@ -1,12 +1,9 @@
 import React, { useState, useReducer, useEffect } from 'react';
-import styled from '@emotion/styled';
-import theme from '../styling/theme';
 import movement from '../reducers/movement';
 import MovementContext from '../context/movementContext';
-
+import Title from './Title/Title';
+import CommandCenter from './CommandCenter/CommandCenter';
 import ActivityLog from './ActivityLog/ActivityLog';
-import InputContainer from './InputContainer/InputContainer';
-import CoordinatesDisplay from './CoordinatesDisplay/CoordinatesDisplay';
 
 const initialCoordinates = {
   X: 0,
@@ -52,41 +49,11 @@ const App = () => {
         obstacleCoordinates,
       }}
     >
-      <Title>Rover Command</Title>
-      <CommandContainer data-testId="controlZone">
-        <h3>Controls</h3>
-        <InputContainer />
-        <CoordinatesDisplay />
-      </CommandContainer>
+      <Title />
+      <CommandCenter />
       <ActivityLog />
     </MovementContext.Provider>
   );
 };
-
-const Title = styled.h1`
-  grid-column: 1 / span 2;
-  font-size: 2.5em;
-  margin: 0;
-  padding-top: ${theme.baseSizes.md};
-`;
-
-const CommandContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.1fr 0.8fr 0.2fr;
-  gap: 0px 20px;
-
-  h3 {
-    text-align: center;
-    grid-column: 1 / span 4;
-  }
-
-  button {
-    border-radius: 8px;
-    height: 32px;
-    align-self: center;
-    justify-self: center;
-  }
-`;
 
 export default App;

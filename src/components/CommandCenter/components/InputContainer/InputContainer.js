@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect, useCallback } from 'react';
-import MovementContext from '../../context/movementContext';
 import { collisionCheck, decipherLog } from './scripts/input';
+import MovementContext from '../../../../context/movementContext';
 
 const InputContainer = () => {
   const { items, setItems, coordinates, setCoordinates, obstacleCoordinates } =

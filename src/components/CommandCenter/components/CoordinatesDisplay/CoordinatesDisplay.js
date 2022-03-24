@@ -1,7 +1,7 @@
 import { useEffect, useContext, useRef } from 'react';
 import styled from '@emotion/styled';
-import MovementContext from '../../context/movementContext';
-import theme from '../../styling/theme';
+import theme from '../../../../styling/theme';
+import MovementContext from '../../../../context/movementContext';
 
 const CoordinatesDisplay = () => {
   const { coordinates } = useContext(MovementContext);
