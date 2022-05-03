@@ -51,25 +51,23 @@ const InputContainer = () => {
     [coordinates, fireLogEntry, obstacleCoordinates, setCoordinates]
   );
 
+  const handleKeyboard = useCallback((e) => {
+    e.preventDefault();
+    const validCommands = ['W', 'S', 'A', 'D'];
+    const key = e.key.toUpperCase();
+
+    if (validCommands.find((element) => element === key)) {
+      setCommand(key);
+    }
+  }, []);
+
   useEffect(() => {
-    const handleKeyboard = (e) => {
-      e.preventDefault();
-      const validCommands = ['W', 'S', 'A', 'D'];
-      const key = e.key.toUpperCase();
-
-      if (validCommands.find((element) => element === key)) {
-        setCommand(key);
-      }
-    };
-
-    window.addEventListener('keyup', (event) => {
-      handleKeyboard(event);
-    });
+    window.addEventListener('keyup', handleKeyboard);
 
     return () => {
       window.removeEventListener('keyup', handleKeyboard);
     };
-  }, []);
+  }, [handleKeyboard]);
 
   useEffect(() => {
     if (!command.length) {
