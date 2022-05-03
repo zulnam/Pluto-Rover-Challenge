@@ -4,7 +4,7 @@ import InputContainer from './components/InputContainer/InputContainer';
 import CoordinatesDisplay from './components/CoordinatesDisplay/CoordinatesDisplay';
 
 const CommandCenter = () => (
-  <CommandContainer data-testId="controlZone">
+  <CommandContainer data-testid="controlZone">
     <h3>Controls</h3>
     <InputContainer />
     <CoordinatesDisplay />
