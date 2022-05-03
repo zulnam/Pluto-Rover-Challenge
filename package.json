@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "clean": "rm -rf ./build && rm -rf ./node_modules",
-    "test": "react-scripts test --silent --collectCoverage",
+    "test": "react-scripts test --collectCoverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
